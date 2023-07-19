@@ -25,3 +25,9 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+try to use asyncValidator without DI.
+make logout functionality as per the requirement also check the loading time.
+implement blank screen while email loading.. refer the outlook.
+after implement correct route guard.. add error handling for the email which does not exists by creating one component and redirect the user to that component. 

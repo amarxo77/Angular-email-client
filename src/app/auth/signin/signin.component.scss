@@ -1,0 +1,15 @@
+.btn-submit {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  ::ng-deep {
+    .spinner {
+      background: conic-gradient(rgba(0, 0, 0, 0) 10%, #f5f6ff);
+    }
+  }
+}

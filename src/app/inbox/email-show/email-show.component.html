@@ -1,0 +1,19 @@
+<div *ngIf="email$ | async as email" class="email">
+  <div class="email-header">
+    <div class="email-details">
+      <h3>{{ email.subject }}</h3>
+      <p class="from">
+        From: <i>{{ email.from }}</i>
+      </p>
+      <p>
+        To: <i>{{ email.to }}</i>
+      </p>
+    </div>
+    <app-email-reply [email]="email"></app-email-reply>
+  </div>
+  <div class="divider"></div>
+  <div [innerHTML]="email.html"></div>
+</div>
+<div class="loader" *ngIf="isEmailLoading$ | async">
+  <app-small-loader></app-small-loader>
+</div>

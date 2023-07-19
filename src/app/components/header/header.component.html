@@ -1,0 +1,22 @@
+<header class="header">
+  <nav class="navbar">
+    <a routerLink="/" class="navbar-brand">angular email</a>
+    <ul class="navbar-links">
+      <ng-container *ngIf="isSignedin$ | async">
+        <li><a routerLink="/inbox" routerLinkActive="active">inbox</a></li>
+        <li><a (click)="signout()">sign out</a></li>
+      </ng-container>
+      <ng-container *ngIf="!(isSignedin$ | async)">
+        <li>
+          <a
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >sign in</a
+          >
+        </li>
+        <li><a routerLink="signup" routerLinkActive="active">sign up</a></li>
+      </ng-container>
+    </ul>
+  </nav>
+</header>

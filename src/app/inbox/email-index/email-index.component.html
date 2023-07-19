@@ -1,0 +1,13 @@
+<ul *ngIf="emails$ | async as emails" class="emails">
+  <li *ngFor="let email of emails" class="email">
+    <a routerLink="/inbox/{{ email.id }}" routerLinkActive="email-active">
+      <div class="email-wrapper">
+        <h4>{{ email.subject }}</h4>
+        <p>{{ email.from }}</p>
+      </div>
+    </a>
+  </li>
+</ul>
+<div class="loader" *ngIf="isLoading$ | async">
+  <app-small-loader></app-small-loader>
+</div>

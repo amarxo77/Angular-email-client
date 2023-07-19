@@ -1,0 +1,28 @@
+.logout {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+
+  &-header {
+
+    &_heading {
+      color: var(--white);
+      font-size: 3.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+  }
+
+  &-img {
+    width: 20%;
+  }
+
+  .login-link {
+    display: inline-block;
+    font-size: 1.4rem;
+    margin-right: 7%;
+  }
+
+}

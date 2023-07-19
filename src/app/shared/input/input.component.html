@@ -1,0 +1,56 @@
+<div class="form-input">
+  <div>
+    <label class="label">{{ label }}</label>
+    <app-small-loader
+      *ngIf="(checkUsernameAvailable$ | async) && usernameCheck === 'username'"
+    ></app-small-loader>
+    <i
+      class="bi bi-check-circle-fill"
+      *ngIf="!(checkUsernameAvailable$ | async) && !control.errors && !control.errors?.['usernameInUse'] && usernameCheck === 'username'"
+    ></i>
+  </div>
+  <input
+    *ngIf="controlType === 'input'"
+    [type]="type"
+    class="form-control"
+    [formControl]="control"
+  />
+  <textarea
+    *ngIf="controlType === 'textarea'"
+    class="form-control"
+    [formControl]="control"
+    rows="8"
+  ></textarea>
+  <p
+    class="success-text"
+    *ngIf="!(checkUsernameAvailable$ | async) && !control.errors && !control.errors?.['usernameInUse'] && usernameCheck === 'username'"
+  >
+    username available
+  </p>
+  <ng-container *ngIf="control.touched && control.dirty && control.errors">
+    <p class="error-text" *ngIf="control.errors?.['required']">
+      {{ label | lowercase }} is required ⚠️
+    </p>
+    <p class="error-text" *ngIf="control.errors?.['email']">
+      please enter a valid email ⚠️
+    </p>
+    <p class="error-text" *ngIf="control.errors?.['minlength']">
+      {{ label | lowercase }} must be at least
+      {{ control.errors["minlength"].requiredLength }} characters long ⚠️
+    </p>
+    <p class="error-text" *ngIf="control.errors?.['maxlength']">
+      {{ label | lowercase }} length cannot be greater than
+      {{ control.errors["maxlength"].requiredLength }} characters ⚠️
+    </p>
+    <p class="error-text" *ngIf="control.errors?.['pattern']">
+      {{ label | lowercase }} can contain only letters and numbers 🔠 🔢.
+    </p>
+    <p class="error-text" *ngIf="control.errors?.['usernameInUse']">
+      username that you've entered is already took by someone☹️ Please try other
+      username.
+    </p>
+    <p class="error-text" *ngIf="control.errors?.['noConnection']">
+      Please check your internet connection 📢. Or contact to administrator.
+    </p>
+  </ng-container>
+</div>

@@ -1,0 +1,20 @@
+<h2 class="heading">sign in to your account 💻</h2>
+<form class="auth-form" [formGroup]="authForm" (ngSubmit)="onSubmit()">
+  <app-form-errors [form]="authForm"></app-form-errors>
+  <app-input label="Username" [control]="username"></app-input>
+  <app-input
+    label="Password"
+    inputType="password"
+    [control]="password"
+  ></app-input>
+  <div class="form-action">
+    <button
+      type="submit"
+      class="btn btn-submit"
+      [disabled]="formSubmitting$ | async"
+    >
+      <span>{{( formSubmitting$ | async) ? 'logging in...' : 'log in'}}</span>
+      <app-small-loader *ngIf="formSubmitting$ | async"></app-small-loader>
+    </button>
+  </div>
+</form>

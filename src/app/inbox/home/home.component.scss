@@ -1,0 +1,20 @@
+.inbox-home {
+  height: calc(100vh - 7.531rem);
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+
+  .main {
+    background: var(--grey-900);
+    border: 1px solid var(--white);
+    border-radius: var(--border-radius);
+    overflow-x: hidden;
+  }
+
+  .side {
+    padding-right: 0.8rem;
+    max-height: inherit;
+    overflow-y: auto;
+  }
+
+}

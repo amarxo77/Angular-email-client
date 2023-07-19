@@ -1,0 +1,25 @@
+<h2 class="heading">Create an account 🚀</h2>
+<form [formGroup]="authForm" class="auth-form" (ngSubmit)="onSubmit()">
+  <app-form-errors [form]="authForm"></app-form-errors>
+  <app-input
+    label="Username"
+    [control]="authForm.controls.username"
+    usernameCheck= 'username'
+  ></app-input>
+  <app-input
+    label="Password"
+    [control]="authForm.controls.password"
+    inputType="password"
+  ></app-input>
+  <app-input
+    label="Password Confirmation"
+    [control]="authForm.controls.passwordConfirmation"
+    inputType="password"
+  ></app-input>
+  <div class="form-action">
+    <button type="submit" class="btn btn-submit" [disabled]="(formSubmitting$ | async)">
+      <span>sign up</span>
+      <app-small-loader *ngIf="(formSubmitting$ | async)"></app-small-loader>
+    </button>
+  </div>
+</form>

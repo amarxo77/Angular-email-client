@@ -1,0 +1,13 @@
+.form-input {
+  div:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 5%;
+
+    i {
+      color: var(--green-success);
+    }
+
+  }
+}

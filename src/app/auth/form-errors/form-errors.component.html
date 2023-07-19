@@ -1,0 +1,20 @@
+<ng-container *ngIf="form.errors">
+  <h3
+    class="error-heading"
+    *ngIf="form.controls?.['password']?.touched && form.controls?.['passwordConfirmation']?.touched && form.controls?.['password']?.dirty && form.controls?.['passwordConfirmation']?.dirty && form.errors?.['passwordsNotMatch']"
+  >
+    password and confirm password should match❗
+  </h3>
+  <h3 class="error-heading" *ngIf="form.errors['noConnection']">
+    Please check your internet connection or contact to application manager❗
+  </h3>
+  <h3 class="error-heading" *ngIf="form.errors['unknownError']">
+    Unknown error occurred please contact to application manager❗
+  </h3>
+  <h3 class="error-heading" *ngIf="form.errors['inValidPassword']">
+    please check your password❗
+  </h3>
+  <h3 class="error-heading" *ngIf="form.errors['invalidCredentials']">
+    invalid username or password❗
+  </h3>
+</ng-container>

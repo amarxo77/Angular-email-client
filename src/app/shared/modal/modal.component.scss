@@ -1,0 +1,46 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  background: rgb(16 5 62 / 46%);
+  z-index: 2;
+
+  .modal {
+    position: relative;
+    background: white;
+    color: var(--grey-900);
+    max-width: var(--width-lg);
+    width: var(--view-width);
+    max-height: 70%;
+    padding: 1rem;
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%);
+    overflow-y: auto;
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--black);
+
+      .close-btn {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+
+        & svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+
+    &-content {
+      padding-top: 1rem;
+    }
+
+  }
+}

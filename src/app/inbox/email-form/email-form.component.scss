@@ -1,0 +1,19 @@
+::ng-deep {
+  .label {
+    color: var(--black);
+    font-weight: 800;
+    padding-bottom: 0.25rem;
+  }
+
+  .form-input {
+    margin-bottom: 1rem;
+  }
+
+  .form-action {
+    text-align: left;
+
+    button {
+      background: var(--primary-500);
+    }
+  }
+}

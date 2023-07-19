@@ -1,0 +1,6 @@
+<button class="btn reply-btn" (click)="openReply()">reply</button>
+
+<app-modal *ngIf="showModal" (dismiss)="closeReply()">
+  <h2 modalTitle>reply</h2>
+  <app-email-form [email]="email" (emailSubmit)="onSubmit($event)"></app-email-form>
+</app-modal>
