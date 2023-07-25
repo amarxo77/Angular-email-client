@@ -20,6 +20,7 @@ export class AuthGuard implements CanLoad {
       map((value) => value !== null),
       tap((value) => {
         if (!value) {
+          alert('Please login to the app first.');
           this.router.navigateByUrl('/');
         }
       }),

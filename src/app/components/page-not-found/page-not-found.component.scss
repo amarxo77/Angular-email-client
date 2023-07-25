@@ -1,0 +1,27 @@
+.not-found {
+  height: calc(100vh - 7.531rem);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+    font-size: 15rem;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    color: var(--white);
+    font-size: 3rem;
+    letter-spacing: 0.313rem;
+  }
+
+  a {
+    padding: 1rem;
+
+    span {
+      margin-left: 0.5rem;
+    }
+  }
+}
